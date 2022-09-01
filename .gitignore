@@ -1,0 +1,12 @@
+# Composer
+/vendor/*
+/composer.lock
+/auth.json
+
+# NPM
+/node_modules/*
+
+# PHPUnit
+/coverage/*
+/.phpunit.result.cache
+

@@ -1,0 +1,28 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "npm run development",
+    "development": "mix",
+    "watch": "mix watch",
+    "watch-poll": "mix watch -- --watch-options-poll=1000",
+    "hot": "mix watch --hot",
+    "prod": "npm run nova-install && npm run production",
+    "production": "mix --production",
+    "nova-install": "npm --prefix='./vendor/laravel/nova' ci"
+  },
+  "dependencies": {
+    "@babel/preset-env": "^7.16.11",
+    "@vue/babel-plugin-jsx": "^1.1.0",
+    "@vue/babel-preset-jsx": "^1.2.4",
+    "@vue/compiler-sfc": "^3.2.29",
+    "laravel-mix": "^6.0.41"
+  },
+  "babel": {
+    "plugins": [
+      "@vue/babel-plugin-jsx"
+    ]
+  },
+  "devDependencies": {
+    "vue-loader": "^16.8.3"
+  }
+}
