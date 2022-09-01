@@ -1,1 +1,1 @@
-window.NovaMixins = require('laravel-nova')
+window.LaravelNova = require('laravel-nova')
