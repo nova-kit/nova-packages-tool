@@ -1,6 +1,10 @@
 name: "Update Assets"
 
-on: [workflow_dispatch, push]
+on:
+  workflow_dispatch: 
+  push:
+    branches:
+      - main
 
 jobs:
   update:
