@@ -1,6 +1,6 @@
 window.LaravelNova = require('laravel-nova')
 
-Nova.booting(app => {
+Nova.booting(() => {
   new MutationObserver(() => {
     const element = document.documentElement.classList
     const theme = element.contains('dark') ? 'light' : 'dark'
