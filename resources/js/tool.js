@@ -5,7 +5,7 @@ Nova.booting(() => {
     const element = document.documentElement.classList
     const theme = element.contains('dark') ? 'light' : 'dark'
 
-    Nova.$emit('package: theme-switched', {
+    Nova.$emit('nova-theme-switched', {
       theme,
       element
     })
