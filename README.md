@@ -37,3 +37,17 @@ webpackConfig.externals = {
 ```
 
 This would allow your package to depends on `laravel-nova` from external source and no longer compiled it locally. 
+
+### Theme Switched Event
+
+Instead of manually registering custom `MutationObserver` on each package, you can now listen to a single `nova-theme-switched` event:
+
+```js
+Nova.$on('nova-theme-switched', ({ theme, element }) => {
+  if (theme === 'dark') {
+    element.add('package-dark')
+  } else {
+    element.remove('package-dark')
+  }
+})
+```
