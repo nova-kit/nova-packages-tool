@@ -47,6 +47,7 @@ Nova.$on('nova-theme-switched', ({ theme, element }) => {
   if (theme === 'dark') {
     element.add('package-dark')
   } else {
-    element.remove('package-dark)
+    element.remove('package-dark')
   }
 })
+```
