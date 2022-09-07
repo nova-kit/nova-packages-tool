@@ -16,6 +16,18 @@ To install through composer, run the following command from terminal:
 composer require "nova-kit/nova-packages-tool:^1.0"
 ```
 
+Next, make sure your application's `composer.json` contains the following command under `script.post-autoload-dump`:
+
+```json
+{
+  "script" : {
+    "post-autoload-dump": [
+      "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
+    ]
+  }
+}
+```
+
 ## Usages
 
 First, you need to add webpack.external alias to `laravel-nova` and comment the existing reference to `vendor/laravel/nova/resources/js/mixins/js/packages.js` under `nova.mix.js`:
