@@ -17,9 +17,8 @@ class LaravelServiceProvider extends ServiceProvider
     public function boot()
     {
         Nova::serving(function (ServingNova $event) {
-            Nova::$scripts = array_unshift(
-                Nova::$scripts,
-                Script::remote(mix('tool.js', 'vendor/nova-kit/nova-packages-tool'))
+            array_unshift(
+                Nova::$scripts, Script::remote(mix('tool.js', 'vendor/nova-kit/nova-packages-tool'))
             );
         });
 
