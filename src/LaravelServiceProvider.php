@@ -5,6 +5,7 @@ namespace NovaKit\NovaPackagesTool;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Nova\Events\ServingNova;
 use Laravel\Nova\Nova;
+use Laravel\Nova\Script;
 
 class LaravelServiceProvider extends ServiceProvider
 {
@@ -16,7 +17,9 @@ class LaravelServiceProvider extends ServiceProvider
     public function boot()
     {
         Nova::serving(function (ServingNova $event) {
-            Nova::remoteScript(mix('tool.js', 'vendor/nova-kit/nova-packages-tool'));
+            array_unshift(
+                Nova::$scripts, Script::remote(mix('tool.js', 'vendor/nova-kit/nova-packages-tool'))
+            );
         });
 
         $this->publishes([
