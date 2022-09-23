@@ -38,6 +38,10 @@ jobs:
         env:
           TAILWIND_MODE: build
 
+      - name: Copy language file
+        run: |
+          cp ./vendor/laravel/nova/resources/lang/en.json ./lang/
+
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
