@@ -37,5 +37,12 @@
             ]
         }
     },
+    "scripts": {
+        "build": [
+            "npm --prefix './vendor/laravel/nova/' ci",
+            "npm ci",
+            "TAILWIND_MODE=build npm run prod"
+        ]
+    },
     "minimum-stability": "stable"
 }
