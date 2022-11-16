@@ -10,7 +10,7 @@ This library provides a versioning `laravel-nova` mixins dependency for 3rd part
 
 ## Why?
 
-`laravel-nova` may introduce breaking and none breaking improvements from time to time. To maintain compatibility all 3rd party packages should rebuild their packages each time Laravel Nova released a new version and depending on the severity of the changes it may result in your application no longer working and you have to remain on older versions.
+`laravel-nova` may introduce breaking and none breaking improvements from time to time. To maintain compatibility all 3rd party packages should rebuild their packages each time Laravel Nova released a new version. By skipping this process and depending on the severity of the changes it may result in your application no longer working and you are locked to an older version and have to wait each affecting 3rd packages to update their code.
 
 ### Pro
 
