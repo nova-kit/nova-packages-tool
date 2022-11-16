@@ -8,6 +8,8 @@ Tool for Laravel Nova Packages Development
 
 This library provides a versioning `laravel-nova` mixins dependency for 3rd party packages built for Laravel Nova.
 
+## Why?
+
 `laravel-nova` may introduce breaking and none breaking improvements from time to time. To maintain compatibility all 3rd party packages should rebuild their packages each time Laravel Nova released a new version. Depending on the severity of the changes it may result in your application no longer working and you have to remain on older versions.
 
 ### Pro
