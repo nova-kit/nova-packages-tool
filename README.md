@@ -10,9 +10,11 @@ This library provides a versioning `laravel-nova` mixins dependency for 3rd part
 
 ## Why?
 
-`laravel-nova` may introduce breaking and none breaking improvements from time to time. To maintain compatibility all 3rd party packages should rebuild their packages each time Laravel Nova released a new version. By skipping this process and depending on the severity of the changes it may result in your application no longer working and you are locked to an older version and have to wait each affecting 3rd packages to update their code.
+`laravel-nova` may introduce breaking and none breaking improvements from time to time. To maintain compatibility all 3rd party packages should rebuild their packages each time Laravel Nova released a new version. 
 
-### Pro
+By skipping this process and depending on the severity of the changes it may result in your application no longer working and you are locked to an older version and have to wait each affecting 3rd packages to update their code.
+
+### Pros
 
 * `nova-kit/nova-packages-tool` reduces the maintaining hurdle for each 3rd party package utilizing `laravel-nova`.
 * The `dist` generated file will be reduced since 3rd party package is no longer required to build `laravel-nova` source code.
