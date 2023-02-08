@@ -16,10 +16,10 @@
     },
     "require": {
         "php": "^7.3 || ^8.0",
-        "laravel/nova": "^4.19"
+        "laravel/nova": "^4.22"
     },
     "require-dev": {
-        "orchestra/testbench": "^6.24 || ^7.0"
+        "orchestra/testbench": "^6.24 || ^7.0 || ^8.0"
     },
     "repositories": [
         {
