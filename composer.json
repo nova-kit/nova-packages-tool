@@ -19,7 +19,8 @@
         "laravel/nova": ">=4.22.0 <4.23.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^6.24 || ^7.0 || ^8.0"
+        "orchestra/testbench": "^6.24 || ^7.0 || ^8.0",
+        "phpunit/phpunit": "^9.6"
     },
     "repositories": [
         {
