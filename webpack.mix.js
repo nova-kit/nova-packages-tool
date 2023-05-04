@@ -10,6 +10,6 @@ mix
   .sourceMaps()
   .setPublicPath('dist')
   .alias({
-    '@': path.join(__dirname, 'resources/js'),
+    '@': path.join(__dirname, 'vendor/laravel/nova/resources/js'),
   })
   .nova('nova-kit/nova-packages-tool')
