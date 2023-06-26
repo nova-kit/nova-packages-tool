@@ -16,7 +16,7 @@
     },
     "require": {
         "php": "^7.3 || ^8.0",
-        "laravel/nova": ">=4.25.0 <4.26.0"
+        "laravel/nova": ">=4.25.0 <4.27.0"
     },
     "require-dev": {
         "orchestra/testbench": "^6.24 || ^7.0 || ^8.0"
