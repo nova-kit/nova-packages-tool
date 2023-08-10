@@ -11,18 +11,13 @@
     "nova-install": "npm --prefix='./vendor/laravel/nova' ci"
   },
   "dependencies": {
-    "@babel/preset-env": "7.18.10",
-    "@vue/babel-plugin-jsx": "1.1.1",
+    "@babel/preset-env": "7.22.10",
+    "@vue/babel-plugin-jsx": "1.1.5",
     "@vue/babel-preset-jsx": "1.4.0",
     "@vue/compiler-sfc": "3.2.38",
     "laravel-mix": "6.0.49"
   },
   "devDependencies": {
     "vue-loader": "16.8.3"
-  },
-  "babel": {
-    "plugins": [
-      "@vue/babel-plugin-jsx"
-    ]
   }
 }
