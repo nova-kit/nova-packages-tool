@@ -16,6 +16,7 @@ workbench:
   build:
     - asset-publish
     - create-sqlite-db
+    - db:wipe
     - migrate:refresh
   assets:
     - nova-assets
