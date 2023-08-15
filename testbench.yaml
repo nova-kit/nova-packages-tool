@@ -13,3 +13,15 @@ seeders:
 
 workbench:
   start: /nova
+  build:
+    - asset-publish
+    - create-sqlite-db
+    - migrate:refresh
+  assets:
+    - nova-assets
+  sync:
+    - from: ./dist
+      to: public/vendor/nova-kit/nova-packages-tool
+
+purge:
+  directories: public/vendor/*
