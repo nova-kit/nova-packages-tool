@@ -48,12 +48,10 @@
             "npm ci",
             "TAILWIND_MODE=build npm run prod"
         ],
+        "clear": "@php vendor/bin/testbench package:purge-skeleton --ansi",
         "build": [
             "@composer run prepare",
-            "@php vendor/bin/testbench vendor:publish --tag=nova-assets --ansi --force",
-            "@php vendor/bin/testbench vendor:publish --tag=laravel-assets --ansi --force",
-            "@php vendor/bin/testbench workbench:create-sqlite-db",
-            "@php vendor/bin/testbench migrate:refresh"
+            "@php vendor/bin/testbench workbench:build --ansi"
         ],
         "start": [
             "@composer run build",
