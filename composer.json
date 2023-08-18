@@ -25,7 +25,8 @@
         "laravel/nova": ">=4.27.0 <4.28.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^6.31 || ^7.28 || ^8.8"
+        "orchestra/testbench": "^6.31 || ^7.28 || ^8.8",
+        "orchestra/workbench": "^0.1.3"
     },
     "repositories": [
         {
@@ -41,21 +42,27 @@
         }
     },
     "scripts": {
-        "post-autoload-dump": "@composer run prepare",
+        "post-autoload-dump": [
+            "@composer run clear",
+            "@composer run prepare"
+        ],
+        "clear": "@php vendor/bin/testbench package:purge-skeleton --ansi",
         "prepare": "@php vendor/bin/testbench package:discover --ansi",
         "nova:build": [
             "npm --prefix './vendor/laravel/nova/' ci",
             "npm ci",
             "TAILWIND_MODE=build npm run prod"
         ],
-        "clear": "@php vendor/bin/testbench package:purge-skeleton --ansi",
-        "build": [
+        "build": "@php vendor/bin/testbench workbench:build",
+        "serve": [
+            "@composer run clear",
             "@composer run prepare",
-            "@php vendor/bin/testbench workbench:build --ansi"
-        ],
-        "start": [
             "@composer run build",
             "@php vendor/bin/testbench serve"
+        ],
+        "lint": [
+            "@composer run prepare",
+            "pint"
         ]
     },
     "prefer-stable": true,
