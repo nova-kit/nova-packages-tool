@@ -16,8 +16,6 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function boot()
     {
         parent::boot();
-
-        Nova::initialPath('/resources/users');
     }
 
     /**
@@ -54,7 +52,9 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      */
     protected function dashboards()
     {
-        return [];
+        return [
+            new \Laravel\Nova\Dashboards\Main(),
+        ];
     }
 
     /**
