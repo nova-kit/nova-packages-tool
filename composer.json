@@ -17,7 +17,6 @@
     "autoload-dev": {
         "psr-4": {
             "Workbench\\App\\": "workbench/app/",
-            "Workbench\\Database\\": "workbench/database/",
             "Workbench\\Database\\Factories\\": "workbench/database/factories/",
             "Workbench\\Database\\Seeders\\": "workbench/database/seeders/"
         }
@@ -58,6 +57,9 @@
             "npm --prefix './vendor/laravel/nova/' ci",
             "npm ci",
             "TAILWIND_MODE=build npm run prod"
+        ],
+        "lint": [
+            "pint"
         ]
     },
     "prefer-stable": true,
