@@ -28,6 +28,8 @@ class InstallingWorkbench
      */
     public function handle(InstallStarted $event)
     {
+        $workingDirectory = realpath(__DIR__.'/../../stubs');
+
         if (! $this->files->exists(Workbench::packagePath('testbench.yaml'))) {
             $this->files->copy(
                 $workingDirectory.DIRECTORY_SEPARATOR.'testbench.stub',
