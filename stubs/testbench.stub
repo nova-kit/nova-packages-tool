@@ -1,5 +1,5 @@
 providers:
-  - Laravel\Nova\NovaServiceProvider
+  - Laravel\Nova\NovaCoreServiceProvider
   - Workbench\App\Providers\NovaServiceProvider
 
 migrations: true
