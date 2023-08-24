@@ -1,6 +1,7 @@
 providers:
   - Laravel\Nova\NovaServiceProvider
   - NovaKit\NovaPackagesTool\LaravelServiceProvider
+  - Workbench\App\Providers\NovaServiceProvider
 
 env:
   - SEND_QUERIES_TO_RAY=false
