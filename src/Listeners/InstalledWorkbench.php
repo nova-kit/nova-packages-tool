@@ -30,8 +30,6 @@ class InstalledWorkbench
     {
         $workingDirectory = realpath(__DIR__.'/../../stubs');
 
-        ray($workingDirectory);
-
         $this->files->ensureDirectoryExists(Workbench::path('app/Nova'), 0755, true);
         $this->files->ensureDirectoryExists(Workbench::path('app/Providers'), 0755, true);
 

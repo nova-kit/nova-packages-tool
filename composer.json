@@ -57,9 +57,6 @@
             "npm --prefix './vendor/laravel/nova/' ci",
             "npm ci",
             "TAILWIND_MODE=build npm run prod"
-        ],
-        "lint": [
-            "pint"
         ]
     },
     "prefer-stable": true,
