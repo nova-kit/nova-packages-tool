@@ -17,7 +17,8 @@
     "autoload-dev": {
         "psr-4": {
             "Workbench\\App\\": "workbench/app/",
-            "Workbench\\Database\\": "workbench/database/"
+            "Workbench\\Database\\Factories\\": "workbench/database/factories/",
+            "Workbench\\Database\\Seeders\\": "workbench/database/seeders/"
         }
     },
     "require": {
@@ -25,7 +26,7 @@
         "laravel/nova": "^4.27.4"
     },
     "require-dev": {
-        "orchestra/testbench": "^6.24 || ^7.0 || ^8.0"
+        "orchestra/testbench": "^6.35 || ^7.29 || ^8.9"
     },
     "repositories": [
         {
@@ -41,24 +42,23 @@
         }
     },
     "scripts": {
-        "post-autoload-dump": "@composer run prepare",
+        "post-autoload-dump": [
+            "@clear",
+            "@prepare"
+        ],
+        "clear": "@php vendor/bin/testbench package:purge-skeleton --ansi",
         "prepare": "@php vendor/bin/testbench package:discover --ansi",
+        "build": "@php vendor/bin/testbench workbench:build --ansi",
+        "serve": [
+            "@build",
+            "@php vendor/bin/testbench serve"
+        ],
         "nova:build": [
             "npm --prefix './vendor/laravel/nova/' ci",
             "npm ci",
             "TAILWIND_MODE=build npm run prod"
-        ],
-        "build": [
-            "@composer run prepare",
-            "@php vendor/bin/testbench vendor:publish --tag=nova-assets --ansi --force",
-            "@php vendor/bin/testbench vendor:publish --tag=laravel-assets --ansi --force",
-            "@php vendor/bin/testbench workbench:create-sqlite-db",
-            "@php vendor/bin/testbench migrate:refresh"
-        ],
-        "start": [
-            "@composer run build",
-            "@php vendor/bin/testbench serve"
         ]
     },
-    "minimum-stability": "stable"
+    "prefer-stable": true,
+    "minimum-stability": "dev"
 }

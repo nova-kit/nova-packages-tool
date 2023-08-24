@@ -1,0 +1,26 @@
+preset: package
+
+namespace: NovaKit\NovaPackagesTool
+
+paths:
+  src: src
+  resource: resources
+
+factory:
+  path: database/factories
+
+migration:
+  path: database/migrations
+  prefix: ''
+
+console:
+  namespace: NovaKit\NovaPackagesTool\Console
+
+provider:
+  namespace: NovaKit\NovaPackagesTool
+
+testing:
+  namespace: NovaKit\NovaPackagesTool\Tests
+
+generators:
+  - Orchestra\Canvas\Commands\Code
