@@ -20,9 +20,9 @@ workbench:
     - migrate:refresh
   assets:
     - nova-assets
-  sync:
-    - from: ./dist
-      to: public/vendor/nova-kit/nova-packages-tool
+  sync: []
 
 purge:
-  directories: public/vendor/*
+  directories:
+    - lang/*
+    - public/vendor/*

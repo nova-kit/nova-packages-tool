@@ -2,9 +2,16 @@
 
 namespace Workbench\App\Providers;
 
+use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Str;
+use Laravel\Nova\Actions\ActionResource;
 use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
+use Laravel\Nova\Resource;
+use Orchestra\Workbench\Workbench;
+use ReflectionClass;
+use Symfony\Component\Finder\Finder;
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
 {
@@ -74,9 +81,30 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      */
     protected function resources()
     {
-        Nova::resources([
-            \Workbench\App\Nova\User::class,
-        ]);
+        $namespace = 'Workbench\App\\';
+
+        $resources = [];
+
+        foreach ((new Finder())->in(Workbench::path('app/Nova'))->files() as $resource) {
+            $resource = $namespace.str_replace(
+                ['/', '.php'],
+                ['\\', ''],
+                Str::after($resource->getPathname(), Workbench::path('app').DIRECTORY_SEPARATOR)
+            );
+            ray($resource);
+
+            if (
+                is_subclass_of($resource, Resource::class) &&
+                ! (new ReflectionClass($resource))->isAbstract() &&
+                ! is_subclass_of($resource, ActionResource::class)
+            ) {
+                $resources[] = $resource;
+            }
+        }
+
+        Nova::resources(
+            collect($resources)->sort()->all()
+        );
     }
 
     /**
