@@ -27,7 +27,7 @@
     },
     "require-dev": {
         "orchestra/testbench": "^6.35 || ^7.29 || ^8.9",
-        "nova-kit/nova-devtool": "^1.0"
+        "nova-kit/nova-devtool": "^1.1.1"
     },
     "repositories": [
         {
@@ -58,6 +58,9 @@
             "npm --prefix './vendor/laravel/nova/' ci",
             "npm ci",
             "TAILWIND_MODE=build npm run prod"
+        ],
+        "lint": [
+            "pint"
         ]
     },
     "prefer-stable": true,
