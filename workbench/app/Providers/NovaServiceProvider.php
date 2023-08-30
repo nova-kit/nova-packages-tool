@@ -91,7 +91,6 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 ['\\', ''],
                 Str::after($resource->getPathname(), Workbench::path('app').DIRECTORY_SEPARATOR)
             );
-            ray($resource);
 
             if (
                 is_subclass_of($resource, Resource::class) &&
