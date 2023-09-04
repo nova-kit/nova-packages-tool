@@ -27,7 +27,7 @@
     },
     "require-dev": {
         "orchestra/testbench": "^6.35 || ^7.29 || ^8.9",
-        "nova-kit/nova-devtool": "^1.2.1"
+        "nova-kit/nova-devtool": "^1.3"
     },
     "repositories": [
         {

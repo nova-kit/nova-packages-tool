@@ -3,9 +3,8 @@
 namespace Workbench\App\Providers;
 
 use Illuminate\Support\Facades\Gate;
-use NovaKit\NovaDevTool\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
-use Orchestra\Workbench\Workbench;
+use NovaKit\NovaDevTool\Nova;
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
 {
@@ -75,7 +74,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      */
     protected function resources()
     {
-        Nova::resourcesIn(Workbench::path('app/Nova'));
+        Nova::resourcesInWorkbench();
     }
 
     /**

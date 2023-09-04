@@ -2,14 +2,10 @@
 
 namespace NovaKit\NovaPackagesTool;
 
-use Composer\InstalledVersions;
-use Illuminate\Contracts\Events\Dispatcher as EventDispatcher;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Nova\Events\ServingNova;
 use Laravel\Nova\Nova;
 use Laravel\Nova\Script;
-use Orchestra\Workbench\Events\InstallEnded;
-use Orchestra\Workbench\Events\InstallStarted;
 
 class LaravelServiceProvider extends ServiceProvider
 {
