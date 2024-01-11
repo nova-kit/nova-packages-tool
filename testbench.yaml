@@ -1,0 +1,28 @@
+providers:
+  - Laravel\Nova\NovaCoreServiceProvider
+  - NovaKit\NovaPackagesTool\LaravelServiceProvider
+  - Workbench\App\Providers\NovaServiceProvider
+
+env:
+  - SEND_QUERIES_TO_RAY=false
+
+migrations: true
+
+seeders:
+  - Workbench\Database\Seeders\DatabaseSeeder
+
+workbench:
+  start: /nova
+  build:
+    - asset-publish
+    - create-sqlite-db
+    - db:wipe
+    - migrate:refresh
+  assets:
+    - nova-assets
+  sync: []
+
+purge:
+  directories:
+    - lang/*
+    - public/vendor/*

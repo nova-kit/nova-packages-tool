@@ -14,13 +14,20 @@
             "NovaKit\\NovaPackagesTool\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Workbench\\App\\": "workbench/app/",
+            "Workbench\\Database\\Factories\\": "workbench/database/factories/",
+            "Workbench\\Database\\Seeders\\": "workbench/database/seeders/"
+        }
+    },
     "require": {
         "php": "^7.3 || ^8.0",
-        "laravel/nova": "^4.22"
+        "laravel/nova": "^4.28"
     },
     "require-dev": {
-        "orchestra/testbench": "^6.24 || ^7.0 || ^8.0 || ^9.0",
-        "phpunit/phpunit": "^9.6 || ^10.0"
+        "orchestra/testbench": "^6.35 || ^7.29 || ^8.9 || ^9.0",
+        "nova-kit/nova-devtool": "^1.3"
     },
     "repositories": [
         {
@@ -36,11 +43,26 @@
         }
     },
     "scripts": {
-        "build": [
+        "post-autoload-dump": [
+            "@clear",
+            "@prepare"
+        ],
+        "clear": "@php vendor/bin/testbench package:purge-skeleton --ansi",
+        "prepare": "@php vendor/bin/testbench package:discover --ansi",
+        "build": "@php vendor/bin/testbench workbench:build --ansi",
+        "serve": [
+            "@build",
+            "@php vendor/bin/testbench serve"
+        ],
+        "nova:build": [
             "npm --prefix './vendor/laravel/nova/' ci",
             "npm ci",
             "TAILWIND_MODE=build npm run prod"
+        ],
+        "lint": [
+            "pint"
         ]
     },
-    "minimum-stability": "stable"
+    "prefer-stable": true,
+    "minimum-stability": "dev"
 }
