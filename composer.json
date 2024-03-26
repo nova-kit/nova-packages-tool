@@ -23,10 +23,10 @@
     },
     "require": {
         "php": "^7.3 || ^8.0",
-        "laravel/nova": "^4.32"
+        "laravel/nova": "^4.33.1"
     },
     "require-dev": {
-        "orchestra/testbench": "^6.35 || ^7.29 || ^8.9",
+        "orchestra/testbench": "^6.35 || ^7.29 || ^8.9 || ^9.0",
         "nova-kit/nova-devtool": "^1.3"
     },
     "repositories": [
