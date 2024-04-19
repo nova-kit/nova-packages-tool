@@ -37,6 +37,9 @@
         }
     ],
     "extra": {
+        "branch-alias": {
+            "dev-develop": "2.x-dev"
+        },
         "laravel": {
             "providers": [
                 "NovaKit\\NovaPackagesTool\\LaravelServiceProvider"
