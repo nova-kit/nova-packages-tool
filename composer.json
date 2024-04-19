@@ -23,11 +23,12 @@
     },
     "require": {
         "php": "^7.3 || ^8.0",
-        "laravel/nova": "*"
+        "illuminate/support": "^10.34 || ^11.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^6.35 || ^7.29 || ^8.9 || ^9.0",
-        "nova-kit/nova-devtool": "^1.3"
+        "laravel/nova": "dev-develop",
+        "nova-kit/nova-devtool": "dev-develop",
+        "orchestra/testbench": "^8.20 || ^9.0"
     },
     "repositories": [
         {

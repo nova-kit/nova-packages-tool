@@ -1,4 +1,6 @@
-window.LaravelNova = require('laravel-nova')
+if (window.LaravelNova === undefined) {
+  window.LaravelNova = require('laravel-nova')
+}
 
 Nova.booting(() => {
   let currentTheme = null
