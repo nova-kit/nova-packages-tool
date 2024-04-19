@@ -27,7 +27,7 @@
     },
     "require-dev": {
         "laravel/nova": "dev-develop",
-        "nova-kit/nova-devtool": "dev-develop",
+        "nova-kit/nova-devtool": "^2.0",
         "orchestra/testbench": "^8.20 || ^9.0"
     },
     "repositories": [
