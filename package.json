@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@babel/preset-env": "7.23.9",
-    "@vue/babel-plugin-jsx": "1.1.5",
+    "@vue/babel-plugin-jsx": "1.2.1",
     "@vue/babel-preset-jsx": "1.4.0",
     "@vue/compiler-sfc": "3.4.19",
     "laravel-mix": "6.0.49"
