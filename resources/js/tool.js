@@ -2,6 +2,10 @@ if (window.LaravelNova === undefined) {
   window.LaravelNova = require('laravel-nova')
 }
 
+if (window.LaravelNova === undefined) {
+  window.LaravelNovaUi = require('laravel-nova-ui')
+}
+
 Nova.booting(() => {
   let currentTheme = null
 
