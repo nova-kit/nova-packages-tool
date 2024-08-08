@@ -26,15 +26,13 @@
         "illuminate/support": "^10.34 || ^11.0"
     },
     "require-dev": {
-        "laravel/nova": "dev-develop",
         "laravel/nova-devtool": "^1.0",
         "orchestra/testbench": "^8.20 || ^9.0"
     },
+    "conflict": {
+        "laravel/nova": "<5.0.0 || >=6.0.0"
+    },
     "repositories": [
-        {
-            "type": "composer",
-            "url": "https://nova.laravel.com"
-        },
         {
             "type": "vcs",
             "url": "https://github.com/laravel/nova-devtool"
@@ -64,7 +62,6 @@
             "@php vendor/bin/testbench serve"
         ],
         "nova:build": [
-            "npm --prefix './vendor/laravel/nova/' ci",
             "npm ci",
             "TAILWIND_MODE=build npm run prod"
         ],
