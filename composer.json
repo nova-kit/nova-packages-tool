@@ -26,8 +26,13 @@
         "illuminate/support": "^10.34 || ^11.0"
     },
     "require-dev": {
+        "larastan/larastan": "^2.4",
+        "laravel/nova": "dev-develop",
         "laravel/nova-devtool": "^1.0",
-        "orchestra/testbench": "^8.20 || ^9.0"
+        "laravel/pint": "^1.17",
+        "orchestra/pest-plugin-testbench": "^2.0",
+        "orchestra/testbench": "^8.24|^9.2",
+        "phpstan/phpstan": "^1.11"
     },
     "conflict": {
         "laravel/nova": "<5.0.0 || >=6.0.0"
@@ -35,9 +40,18 @@
     "repositories": [
         {
             "type": "vcs",
+            "url": "https://github.com/laravel/nova"
+        },
+        {
+            "type": "vcs",
             "url": "https://github.com/laravel/nova-devtool"
         }
     ],
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
     "extra": {
         "branch-alias": {
             "dev-develop": "2.x-dev"
@@ -59,7 +73,7 @@
         "serve": [
             "Composer\\Config::disableProcessTimeout",
             "@build",
-            "@php vendor/bin/testbench serve"
+            "@php vendor/bin/testbench serve --ansi"
         ],
         "nova:build": [
             "npm ci",
