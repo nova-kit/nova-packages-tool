@@ -51,7 +51,8 @@ First, you need to add webpack.external alias to `laravel-nova` and comment the 
 
 webpackConfig.externals = {
   vue: 'Vue',
-  'laravel-nova': 'LaravelNova'
+  'laravel-nova': 'LaravelNova',
+  'laravel-nova-ui': 'LaravelNovaUi'
 }
 
 // webpackConfig.resolve.alias = {
