@@ -11,19 +11,9 @@ class LaravelServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap any application services.
-     *
-     * @return void
      */
-    public function boot()
+    public function boot(): void
     {
-        Nova::serving(static function (ServingNova $event) {
-            array_unshift(
-                Nova::$scripts, Script::remote(mix('tool.js', 'vendor/nova-kit/nova-packages-tool'))
-            );
-        });
-
-        $this->publishes([
-            __DIR__.'/../dist' => public_path('vendor/nova-kit/nova-packages-tool'),
-        ], ['nova-assets', 'laravel-assets']);
+        //
     }
 }

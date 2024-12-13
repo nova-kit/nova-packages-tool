@@ -1,2 +1,0 @@
-Nova.booting((function(){var t=null;new MutationObserver((function(){var e=document.documentElement.classList,n=e.contains("dark")?"dark":"light";n!==t&&(Nova.$emit("nova-theme-switched",{theme:n,element:e}),t=n)})).observe(document.documentElement,{attributes:!0,attributeOldValue:!0,attributeFilter:["class"]})}));
-//# sourceMappingURL=tool.js.map
