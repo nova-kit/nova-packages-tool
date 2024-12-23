@@ -51,7 +51,8 @@ First, you need to add webpack.external alias to `laravel-nova` and comment the 
 
 webpackConfig.externals = {
   vue: 'Vue',
-  'laravel-nova': 'LaravelNova'
+  'laravel-nova': 'LaravelNova',
+  'laravel-nova-ui': 'LaravelNovaUi'
 }
 
 // webpackConfig.resolve.alias = {
@@ -78,12 +79,3 @@ Nova.$on('nova-theme-switched', ({ theme, element }) => {
   }
 })
 ```
-
-## Nightly Build 
-
-Those who just can't wait for compatible release you have to option to use our nightly build by running the following command on your Laravel Nova application:
-
-```bash 
-composer require nova-kit/nova-packages-tool:"dev-next as 1.999.999"
-```
-
