@@ -32,16 +32,6 @@ jobs:
       - name: Installed dependencies
         run: composer show -D
 
-      - name: Install NPM on Laravel Nova
-        run: npm --prefix "./vendor/laravel/nova/" ci
-
-      - name: Compile Asset
-        run: |
-          npm ci
-          npm run production
-        env:
-          TAILWIND_MODE: build
-
       - name: Copy language file
         run: |
           rm -Rf ./lang
