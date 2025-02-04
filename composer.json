@@ -27,7 +27,7 @@
     },
     "require-dev": {
         "larastan/larastan": "^2.5.1",
-        "laravel/nova": "^5.0",
+        "laravel/nova": "^5.2",
         "laravel/nova-devtool": "^1.0",
         "laravel/pint": "^1.17",
         "orchestra/pest-plugin-testbench": "^2.0 || ^3.0",
@@ -35,7 +35,7 @@
         "phpstan/phpstan": "^1.12"
     },
     "conflict": {
-        "laravel/nova": "<5.0.0 || >=6.0.0"
+        "laravel/nova": "<5.2.0 || >=6.0.0"
     },
     "repositories": [
         { "type": "composer", "url": "https://nova.laravel.com" }
